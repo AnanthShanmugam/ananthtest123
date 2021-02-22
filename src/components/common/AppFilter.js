@@ -1,16 +1,11 @@
 import React, { useState } from 'react'
 
-const AppFilter = ({data}) => {
-
-    const [filteredData, setFilteredData] = useState([]);
-
-
+const AppFilter = ({data, setFilteredData}) => {
+  
     const getValueInput = (event) => {
-        console.log(event.target.value);
-        console.log(data);
-        const filter = data.filter(rec => rec.name.includes(event.target.value));
-        console.log(filter);
-      }
+        const filter = data.filter(rec => rec.name.toLowerCase().includes(event.target.value));
+        setFilteredData(filter);
+    }
 
     return (
         <div>
