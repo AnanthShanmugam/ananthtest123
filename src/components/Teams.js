@@ -21,6 +21,11 @@ const Teams = () => {
     loadTeams();
   }, []);
 
+  const filterTeams = (items) => {
+    console.log('Items here',items);
+    setTeams(items);
+  }
+
   return (
     <Fragment>
       <div className="row header">
@@ -29,7 +34,7 @@ const Teams = () => {
 
       <div class="row filter">
         <div className="col-sm-4">
-          <AppFilter data={teams} />
+          <AppFilter data={teams} setFilteredData={filterTeams} />
         </div>
       </div>
       <div class="row">
